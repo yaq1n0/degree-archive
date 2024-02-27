@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-register/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-permissions/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-title/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-author/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-url/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-publisher/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-publishedYear/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-isbn/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-type/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="NewUser/typeof-register/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="NewUser/typeof-permissions/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="NewUser/inv2/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ChangePassword/typeof-register/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddBook/typeof-title/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddBook/typeof-author/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddBook/typeof-url/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddBook/typeof-publisher/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddBook/typeof-publishedYear/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddBook/typeof-isbn/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddBook/typeof-type/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveBook/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveBook/typeof-title/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveBook/typeof-author/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveBook/typeof-url/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveBook/typeof-publisher/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveBook/typeof-publishedYear/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveBook/typeof-isbn/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveBook/typeof-type/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddArticle/typeof-title/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddArticle/typeof-author/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddArticle/typeof-url/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddArticle/typeof-publisher/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddArticle/typeof-publishedYear/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddArticle/typeof-isbn/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddArticle/typeof-type/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveArticle/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveArticle/typeof-title/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveArticle/typeof-author/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveArticle/typeof-url/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveArticle/typeof-publisher/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveArticle/typeof-publishedYear/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveArticle/typeof-isbn/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveArticle/typeof-type/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddWebsite/typeof-title/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddWebsite/typeof-author/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddWebsite/typeof-url/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddWebsite/typeof-publisher/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddWebsite/typeof-publishedYear/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddWebsite/typeof-isbn/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddWebsite/typeof-type/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveWebsite/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveWebsite/typeof-title/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveWebsite/typeof-author/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveWebsite/typeof-url/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveWebsite/typeof-publisher/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveWebsite/typeof-publishedYear/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveWebsite/typeof-isbn/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveWebsite/typeof-type/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="SetAdmin/grd4/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="SetAdmin/typeof-permissions/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="SetLecturer/grd4/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="SetLecturer/typeof-permissions/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="LogIn/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="LogOut/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="72" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

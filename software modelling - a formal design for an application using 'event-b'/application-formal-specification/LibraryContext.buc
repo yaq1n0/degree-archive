@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base" org.eventb.core.generated="false" version="3">
+    <org.eventb.core.carrierSet name="_a0c5cK5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.identifier="USER"/>
+    <org.eventb.core.carrierSet name="_a0dggK5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.identifier="PASSWORD"/>
+    <org.eventb.core.carrierSet name="_a0dgga5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.identifier="RESOURCE"/>
+    <org.eventb.core.carrierSet name="_a0dggq5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.identifier="RESOURCETYPE"/>
+    <org.eventb.core.carrierSet name="_a0eHkK5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.identifier="TITLE"/>
+    <org.eventb.core.carrierSet name="_a0eHka5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.identifier="AUTHOR"/>
+    <org.eventb.core.carrierSet name="_a0eHkq5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.identifier="URL"/>
+    <org.eventb.core.carrierSet name="_a0eHk65iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.identifier="PUBLISHER"/>
+    <org.eventb.core.carrierSet name="_a0euoK5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.identifier="PUBLISHEDYEAR"/>
+    <org.eventb.core.carrierSet name="_a0euoa5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.identifier="ISBN"/>
+    <org.eventb.core.carrierSet name="_a0euoq5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.identifier="READINGLIST"/>
+    <org.eventb.core.carrierSet name="_a0fVsK5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.identifier="TOKEN"/>
+    <org.eventb.core.constant name="_a0fVsa5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.identifier="LEVEL"/>
+    <org.eventb.core.constant name="_a0fVsq5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.identifier="ROOTUSER"/>
+    <org.eventb.core.constant name="_a0f8wK5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.identifier="ROOTPASS"/>
+    <org.eventb.core.constant name="_a0f8wa5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.identifier="BOOK"/>
+    <org.eventb.core.constant name="_a0f8wq5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.identifier="ARTICLE"/>
+    <org.eventb.core.constant name="_a0gj0K5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.identifier="WEBSITE"/>
+    <org.eventb.core.constant name="_a0gj0a5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.identifier="POSITION"/>
+    <org.eventb.core.axiom name="_a0gj0q5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.label="resource_partition" org.eventb.core.predicate="partition(RESOURCETYPE, {BOOK}, {ARTICLE}, {WEBSITE})"/>
+    <org.eventb.core.axiom name="_a0gj065iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.label="def-LEVEL" org.eventb.core.predicate="LEVEL = 1‥4"/>
+    <org.eventb.core.axiom name="_a0hK4K5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.label="def-ROOTUSER" org.eventb.core.predicate="ROOTUSER ∈ USER"/>
+    <org.eventb.core.axiom name="_a0hK4a5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.label="def-ROOTPASS" org.eventb.core.predicate="ROOTPASS ∈ PASSWORD"/>
+    <org.eventb.core.axiom name="_a0hx8K5iEeu2iKUYb8D31A" org.eventb.core.generated="false" org.eventb.core.label="def-POSITION" org.eventb.core.predicate="POSITION = ℕ"/>
+</org.eventb.core.contextFile>

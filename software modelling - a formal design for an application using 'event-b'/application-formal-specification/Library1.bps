@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-readingListCreator/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-licenseCount/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-userToToken/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-tokenToBook/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-reservations/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-position/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="NewUser/grd6/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="NewUser/typeof-readingListCreator/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="NewUser/typeof-userToToken/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="NewUser/typeof-reservations/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddBook/grd12/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddBook/typeof-licenseCount/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddBook/typeof-tokenToBook/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddBook/typeof-reservations/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveBook/grd11/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveBook/typeof-licenseCount/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveBook/typeof-tokenToBook/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveBook/typeof-reservations/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddArticle/grd11/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddArticle/typeof-licenseCount/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddArticle/typeof-tokenToBook/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddArticle/typeof-reservations/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveArticle/grd11/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveArticle/typeof-licenseCount/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveArticle/typeof-tokenToBook/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveArticle/typeof-reservations/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddWebsite/grd11/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddWebsite/typeof-licenseCount/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddWebsite/typeof-tokenToBook/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddWebsite/typeof-reservations/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveWebsite/grd11/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveWebsite/typeof-licenseCount/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveWebsite/typeof-tokenToBook/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveWebsite/typeof-reservations/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="CreateReadingList/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="CreateReadingList/typeof-readingListCreator/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveReadingList/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveReadingList/typeof-readingListCreator/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddToReadingList/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddToReadingList/grd7/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RemoveFromReadingList/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="BorrowBook/grd2/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="BorrowBook/grd5/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="BorrowBook/typeof-licenseCount/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="BorrowBook/typeof-userToToken/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="BorrowBook/typeof-tokenToBook/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="BorrowBook/typeof-position/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="BorrowBook/act3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ReturnBook/grd4/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ReturnBook/grd6/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ReturnBook/typeof-licenseCount/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ReturnBook/typeof-userToToken/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ReturnBook/typeof-tokenToBook/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ReturnBook/typeof-position/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ReturnBook/act3/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ReserveBook/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ReserveBook/grd4/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ReserveBook/grd7/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ReserveBook/typeof-userToToken/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ReserveBook/typeof-tokenToBook/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ReserveBook/typeof-reservations/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ReserveBook/typeof-position/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="GetBookByISBN/grd3/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="GetBookByISBN/grd4/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="115" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

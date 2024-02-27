@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="19">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="18">
+        <org.eventb.core.poIdentifier name="READINGLIST" org.eventb.core.type="ℙ(READINGLIST)"/>
+        <org.eventb.core.poIdentifier name="URL" org.eventb.core.type="ℙ(URL)"/>
+        <org.eventb.core.poIdentifier name="USER" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="PUBLISHEDYEAR" org.eventb.core.type="ℙ(PUBLISHEDYEAR)"/>
+        <org.eventb.core.poIdentifier name="TOKEN" org.eventb.core.type="ℙ(TOKEN)"/>
+        <org.eventb.core.poIdentifier name="PUBLISHER" org.eventb.core.type="ℙ(PUBLISHER)"/>
+        <org.eventb.core.poIdentifier name="PASSWORD" org.eventb.core.type="ℙ(PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="AUTHOR" org.eventb.core.type="ℙ(AUTHOR)"/>
+        <org.eventb.core.poIdentifier name="RESOURCE" org.eventb.core.type="ℙ(RESOURCE)"/>
+        <org.eventb.core.poIdentifier name="ISBN" org.eventb.core.type="ℙ(ISBN)"/>
+        <org.eventb.core.poIdentifier name="TITLE" org.eventb.core.type="ℙ(TITLE)"/>
+        <org.eventb.core.poIdentifier name="RESOURCETYPE" org.eventb.core.type="ℙ(RESOURCETYPE)"/>
+        <org.eventb.core.poIdentifier name="POSITION" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.poIdentifier name="BOOK" org.eventb.core.type="RESOURCETYPE"/>
+        <org.eventb.core.poIdentifier name="LEVEL" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.poIdentifier name="ROOTPASS" org.eventb.core.type="PASSWORD"/>
+        <org.eventb.core.poIdentifier name="ROOTUSER" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="WEBSITE" org.eventb.core.type="RESOURCETYPE"/>
+        <org.eventb.core.poIdentifier name="ARTICLE" org.eventb.core.type="RESOURCETYPE"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/1216-cw2/LibraryContext.bpo|org.eventb.core.poFile#LibraryContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="19">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(RESOURCETYPE,{BOOK},{ARTICLE},{WEBSITE})" org.eventb.core.source="/1216-cw2/LibraryContext.buc|org.eventb.core.contextFile#LibraryContext|org.eventb.core.axiom#_a0gj0q5iEeu2iKUYb8D31A"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="LEVEL=1 ‥ 4" org.eventb.core.source="/1216-cw2/LibraryContext.buc|org.eventb.core.contextFile#LibraryContext|org.eventb.core.axiom#_a0gj065iEeu2iKUYb8D31A"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="ROOTUSER∈USER" org.eventb.core.source="/1216-cw2/LibraryContext.buc|org.eventb.core.contextFile#LibraryContext|org.eventb.core.axiom#_a0hK4K5iEeu2iKUYb8D31A"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="ROOTPASS∈PASSWORD" org.eventb.core.source="/1216-cw2/LibraryContext.buc|org.eventb.core.contextFile#LibraryContext|org.eventb.core.axiom#_a0hK4a5iEeu2iKUYb8D31A"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="POSITION=ℕ" org.eventb.core.source="/1216-cw2/LibraryContext.buc|org.eventb.core.contextFile#LibraryContext|org.eventb.core.axiom#_a0hx8K5iEeu2iKUYb8D31A"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

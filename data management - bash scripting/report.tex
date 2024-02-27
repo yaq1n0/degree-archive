@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{\textbf{CountReviews Shell Script}}
+\author{Yaqin Kayem Hasan \\ ID: ykh1e19}
+\date{March 2021}
+
+\begin{document}
+
+\maketitle
+
+\clearpage
+
+The following is the shell script in the final submission with comments omitted and line labels added for future reference: 
+\begin{verbatim}
+line 1: #!/bin/bash
+line 2: cd $1
+line 3: for file in *; do
+line 4:   filename=$(basename $file .dat)
+line 5:   n=$(grep -c "<Author>" $file)
+line 6:   v="$v$filename $n\n"
+line 7: done
+line 8: echo -n -e $v | sort -rnk 2
+\end{verbatim}
+\\
+Line 1 is included in every bash script, to specify that it is a bash script. Line 2 navigates to the directory passed in as the first argument. Line 3 through line 7 is a for-loop that goes through every file in the specified directory and performs the following actions: \\
+
+First, in line 4, it removes the .dat extension from the file name and stores that as a variable. Second, in line 5, it uses grep -c to count the number of instances where "\textless Author\textgreater " appears in the file, which corresponds with the number of reviews. Third, it appends both the filename without the extension and the number of reviews to an arbitrary variable. \\
+
+After the for-loop, line 8 sorts the contents of the arbitrary variable by the second key (the number of reviews) and prints it out. 
+
+\end{document}

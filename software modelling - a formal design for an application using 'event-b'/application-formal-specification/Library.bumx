@@ -1,0 +1,246 @@
+machine Library
+sees LibraryContext
+
+variables
+	users // subset of USER container set
+	resources // subset of RESOURCE container set
+	register // mapping of users to their passwords
+	permissions // mapping of users to their level
+	loggedIn // subset of users that are currently logged in
+	loggedOut // subset of users that are currently logged out
+	title // relation assigning a resource to its title
+	author // relation assigning a resource to its author
+	url // relation assigning a resource to its url
+	publisher // relation assigning a resource to its publisher 
+	publishedYear // relation assigning a resource to its published year
+	isbn // relation assigning a resource to its isbn
+	type // relation assigning a resource to its type
+	
+invariants
+	@typeof-users: users ⊆ USER 
+	@typeof-resources: resources ⊆ RESOURCE
+	@typeof-register: register ∈ users → PASSWORD 
+	@typeof-permissions: permissions ∈ users → LEVEL
+	@typeof-loggedIn: loggedIn ⊆ USER
+	@typeof-loggedOut: loggedOut ⊆ USER
+	@typeof-title: title ∈ resources → TITLE
+	@typeof-author: author ∈ resources → AUTHOR
+	@typeof-url: url ∈ resources → URL
+	@typeof-publisher: publisher ∈ resources ⇸ PUBLISHER
+	@typeof-publishedYear: publishedYear ∈ resources ⇸ PUBLISHEDYEAR
+	@typeof-isbn: isbn ∈ resources ⤔ ISBN 
+	@typeof-type: type ∈ resources → RESOURCETYPE
+	@inv1: loggedIn ∩ loggedOut = ∅
+	
+events
+
+	event INITIALISATION // initialise variables
+	begin
+		@act1: register ≔ {(ROOTUSER ↦ ROOTPASS)} // root user is registered at initialization
+		@act2: permissions ≔ {(ROOTUSER ↦ 4)} // root user is assigned root user permissions
+		@act3: users ≔ {ROOTUSER} // root user is added to users 
+		@act4: loggedIn ≔ ∅
+		@act5: loggedOut ≔ {ROOTUSER} // root user starts logged out
+		@act6: title ≔ ∅
+		@act7: author ≔ ∅
+		@act8: url ≔ ∅
+		@act9: publisher ≔ ∅
+		@act10: publishedYear ≔ ∅
+		@act11: isbn ≔ ∅
+		@act15: resources ≔ ∅
+		@act16: type ≔ ∅
+	end
+
+	event NewUser
+	any
+		u // user to be registered
+		p // password of the user
+		l // level of the user
+	where
+		@grd1: u ∈ USER // @u is a user
+		@grd2: p ∈ PASSWORD // @p is a password
+		@grd3: l ∈ LEVEL // @l is a valid level
+		@grd4: u ∉ users // @u isn't already registered
+	then
+		@act1: register(u) ≔ p // assign password @p to the user @u
+		@act2: permissions(u) ≔ l // assign level @l to the user @u
+		@act3: users ≔ users ∪ {u} // user is added to users set
+		@act4: loggedOut ≔ loggedOut ∪ {u} // user starts logged out
+	end
+
+	event ChangePassword // changes the password of an existing user
+	any
+		u // user to have password changed
+		p // new password
+	where
+		@grd1: u ∈ USER // @u is a user
+		@grd2: p ∈ PASSWORD // @p is a password
+		@grd3: u ∈ users // @u is already registered
+	then
+		@act1: register(u) ≔  p // assign password @p to the user @u
+	end
+
+
+	event AddBook // adds a book to the system
+	any
+		b // book to be added
+		t // title of book
+		i // isbn
+		u // url
+		p // publisher
+		y // published year 
+		a // author
+	where
+		@grd1: b ∉ resources // @b isn't already a added
+		@grd2: t ∈ TITLE // @t is a title
+		@grd4: u ∈ URL // @u is a URL
+		@grd5: p ∈ PUBLISHER // @p is a publisher
+		@grd6: y ∈ PUBLISHEDYEAR // @y is a valid year
+		@grd7: a ∈ AUTHOR // @a is an author
+		@grd8: i ∉ ran(isbn) // @i isn't already in the isbn mapping
+	then
+		@act1: resources ≔ resources ∪ {b} // book is added to resources set
+		@act2: title(b) ≔ t // book is assigned a title
+		@act3: isbn(b) ≔ i // book is assigned an isbn
+		@act4: url(b) ≔ u // book is assigned a url
+		@act5: publisher(b) ≔ p // book is assigned a publisher
+		@act6: publishedYear(b) ≔ y // book is assigned a published year
+		@act7: author(b) ≔ a // book is assigned an author
+		@act8: type(b) ≔ BOOK // book is assigned BOOK type
+	end
+	
+	event RemoveBook // removes a book from the system
+	any
+		b // book to be removed
+	where
+		@grd1: b ∈ resources // @b is in the resources list
+		@grd2: type(b) = BOOK // @b is a book
+	then
+		@act1: resources ≔ resources ∖ {b} // book is removed from resources set
+		@act2: title ≔ {b} ⩤ title // mapping of book to its title is removed
+		@act3: isbn ≔ {b} ⩤ isbn // mapping of book to its isbn is removed
+		@act4: url ≔ {b} ⩤ url // mapping of book to its url is removed
+		@act5: publisher ≔ {b} ⩤ publisher // mapping of book to its publisher is removed
+		@act6: publishedYear ≔ {b} ⩤ publishedYear // mapping of book to its published year is removed
+		@act7: author ≔ {b} ⩤ author // mapping of book to its author is removed
+		@act8: type ≔ {b} ⩤ type // mapping of book to its type is removed
+	end
+		
+	event AddArticle // adds an article to the system
+	any
+		a // Article to be added
+		t // title of article
+		u // url
+		p // publisher
+		y // published year 
+		w // author
+	where
+		@grd1: a ∉ resources // @a isn't already added
+		@grd2: t ∈ TITLE // @t is a title
+		@grd3: u ∈ URL // @u is a URL
+		@grd4: p ∈ PUBLISHER // @p is a publisher
+		@grd5: y ∈ PUBLISHEDYEAR // @y is a valid year
+		@grd6: w ∈ AUTHOR // @a is an author
+	then
+		@act1: resources ≔ resources ∪ {a} // article is added to resources set
+		@act2: title(a) ≔ t // article is assigned a title
+		@act3: url(a) ≔ u // article is assigned a url
+		@act4: publisher(a) ≔ p // article is assigned a publisher
+		@act5: publishedYear(a) ≔ y // article is assigned a published year
+		@act6: author(a) ≔ w // article is assigned an author
+		@act7: type(a) ≔ ARTICLE // article is assigned ARTICLE type
+	end
+	
+	event RemoveArticle // removes an article from the system
+	any
+		a // article to be removed
+	where
+		@grd1: a ∈ resources // @a is in the resource list
+		@grd2: type(a) = ARTICLE // @a is an article
+	then
+		@act1: resources ≔resources ∖ {a} // article is removed from resources set
+		@act2: title ≔ {a} ⩤ title // mapping of article to its title is removed
+		@act3: url ≔ {a} ⩤ url // mapping of article to its url is removed
+		@act4: publisher ≔ {a} ⩤ publisher // mapping of article to its publisher is removed
+		@act5: publishedYear ≔ {a} ⩤ publishedYear // mapping of article to its published year is removed
+		@act6: author ≔ {a} ⩤ author // mapping of article to its author is removed
+		@act7: type ≔ {a} ⩤ type // mapping of article to its type is removed
+	end
+	
+	event AddWebsite // adds a website to the system
+	any
+		w // website to be added
+		t // title of article
+		u // url
+		a // author
+	where
+		@grd1: w ∉ resources // @w isn't already added
+		@grd2: t ∈ TITLE // @t is a title
+		@grd3: u ∈ URL // @u is a URL
+		@grd4: a ∈ AUTHOR // @a is an author
+	then
+		@act1: resources ≔ resources ∪ {w} // website is added to resources set
+		@act2: title(w) ≔ t // website is assigned a title
+		@act3: url(w) ≔ u // website is assigned a url
+		@act4: author(w) ≔  a // website is assigned a author
+		@act5: type(w) ≔ WEBSITE // @b is a website // website is assigned WEBSITE type
+	end
+	
+	event RemoveWebsite // removes a website from the system
+	any
+		a // website to be removed
+	where
+		@grd1: a ∈ resources // @a is in the resources list
+		@grd2: type(a) = WEBSITE // @a is a website
+	then
+		@act1: resources ≔resources ∖ {a} // website is removed from resources set
+		@act2: title ≔ {a} ⩤ title // mapping of website to its title is removed
+		@act3: url ≔ {a} ⩤ url // mapping of website to its url is removed
+		@act4: author ≔ {a} ⩤ author // mapping of website to its author is removed
+		@act5: type ≔ {a} ⩤ type // mapping of website to its type is removed
+	end
+	
+	event SetAdmin
+	any
+		u // user to have their permission level changed
+		a // admin changing the permission level
+	where
+		@grd1: u ∈ users // @u is a registered
+		@grd2: a ∈ loggedIn // @a is a loggedIn user
+		@grd3: permissions(a) = 3 ∨ permissions(a) = 4 // @a is admin
+	then
+		@act1: permissions(u) ≔ 3 // set @u to admin account
+	end
+
+	event SetLecturer
+	any
+		u // user to have their permission level changed
+		a // admin changing the permission level
+	where
+		@grd1: u ∈ users // @u is a registerd user
+		@grd2: a ∈ loggedIn // @a is a loggedIn user
+		@grd3: permissions(a) = 3 ∨ permissions(a) = 4 // @a is admin
+	then
+		@act1: permissions(u) ≔  2 // set @u to lecturer account
+	end
+
+	event LogIn
+	any
+		u // user to log in
+	where
+		@grd1: u ∈ loggedOut // @u is logged out 
+	then
+		@act1: loggedIn ≔ loggedIn ∪ {u} //@u is now logged in
+	end
+
+	event LogOut
+	any
+		u // user to log out
+	where
+		@grd1: u ∈ loggedIn // @u is logged in 
+	then
+		@act1: loggedIn ≔ loggedIn ∖ {u} // @u is now not logged in
+		@act2: loggedOut ≔ loggedOut ∪ {u} // @u is now logged out
+	end
+	
+end

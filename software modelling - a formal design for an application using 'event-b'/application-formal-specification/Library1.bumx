@@ -1,0 +1,271 @@
+machine Library1
+refines Library
+sees LibraryContext
+
+variables
+	users // subset of USER container set
+	resources // subset of RESOURCE container set
+	register // mapping of users to their passwords
+	permissions // mapping of users to their level
+	loggedIn // subset of users that are currently logged in
+	loggedOut // subset of users that are currently logged out
+	title // relation assigning a resource to its title
+	author // relation assigning a resource to its author
+	url // relation assigning a resource to its url
+	publisher // relation assigning a resource to its publisher 
+	publishedYear // relation assigning a resource to its published year
+	isbn // relation assigning a resource to its isbn
+	type // relation assigning a resource to its type
+	readingListCreator 
+	readingLists // subset of READINGLIST container set
+	readingListContents // mapping of reading list to its resources
+	licenseCount // mapping of resources (books) to their license count
+	tokens // subset of TOKEN container set
+	userToToken // mapping of users to tokens
+	tokenToBook // mapping of tokens to resources (books)
+	reservations // relation of resources (books) to users 
+	position // mapping of tokens to their position
+	
+invariants
+	@typeof-readingLists: readingLists ⊆ READINGLIST
+	@typeof-readingListCreator: readingListCreator ∈ readingLists → users
+	@typeof-readingListContents: readingListContents ∈ READINGLIST ↔ RESOURCE
+	@typeof-licenseCount: licenseCount ∈ resources ⇸ ℕ
+	@typeof-tokens: tokens ⊆ TOKEN
+	@typeof-userToToken: userToToken ∈ users ↔ tokens
+	@typeof-tokenToBook: tokenToBook ∈ tokens → resources
+	@typeof-reservations: reservations ∈ resources ↔ users
+	@typeof-position: position ∈ tokens ⇸ POSITION
+
+events
+	event INITIALISATION extends INITIALISATION
+	then
+		@act18: readingLists ≔ ∅
+		@act19: readingListCreator ≔ ∅
+		@act20: readingListContents ≔ ∅
+		@act21: licenseCount ≔ ∅
+		@act22: tokens ≔ ∅
+		@act23: userToToken ≔ ∅
+		@act24:	tokenToBook ≔ ∅
+		@act25: reservations ≔ ∅
+		@act26: position ≔ ∅
+	end
+
+	event NewUser extends NewUser 
+	any x // admin creating the user
+	where 
+		@grd5: x ∈ loggedIn // @x is logged in
+		@grd6: permissions(x) = 3 ∨ permissions(x) = 4 // @x is an admin
+	end
+
+	event ChangePassword extends ChangePassword
+	where
+		@grd4: u ∈ loggedIn // user is logged in
+	end
+
+	event AddBook extends AddBook
+	any
+		x // user adding the book
+		l // number of licenses
+	where
+		@grd9: l ∈ ℕ1 // number of licenses is a positive natural number
+		@grd10: x ∈ loggedIn // user is logged in 
+		@grd11: permissions(x) = 3 ∨ permissions(x) = 4 // @x is an admin
+	then
+		@act9: licenseCount(b) ≔ l // book is assigned a license count
+	end
+
+	event RemoveBook extends RemoveBook
+	any
+		x // user removing the book
+	where
+		@grd9: x ∈ loggedIn // user is logged in
+		@grd10: permissions(x) = 3 ∨ permissions(x) = 4 // @x is admin
+	then
+		@act9: licenseCount ≔ {b} ⩤ licenseCount // mapping of book to its license count is removed
+	end
+
+	event AddArticle extends AddArticle
+	any
+		x // user adding the book
+	where
+		@grd9: x ∈ loggedIn // user is logged in
+		@grd10: permissions(x) = 2 // @x is a lecturer
+	end
+
+	event RemoveArticle extends RemoveArticle
+	any
+		x // user adding the book
+	where
+		@grd9: x ∈ loggedIn
+		@grd10: permissions(x) = 2 // @x is a lecturer
+	end
+
+	event AddWebsite extends AddWebsite
+	any
+		x // user adding the book
+	where
+		@grd9: x ∈ loggedIn
+		@grd10: permissions(x) = 2 // @x is a lecturer
+	end
+
+	event RemoveWebsite extends RemoveWebsite
+	any
+		x // user adding the book
+	where
+		@grd9: x ∈ loggedIn
+		@grd10: permissions(x) = 2 // @x is a lecturer
+	end
+
+	event SetAdmin extends SetAdmin
+	end
+
+	event SetLecturer extends SetLecturer
+	end
+
+	event LogIn extends LogIn
+	end
+
+	event LogOut extends LogOut
+	end
+
+	event CreateReadingList
+	any
+		l // list to add
+		u // user adding the list
+	where
+		@grd1: l ∈ READINGLIST // @l is a reading list
+		@grd2: u ∈ loggedIn // @u is logged in
+		@grd3: permissions(u) = 2 // @u is a lecturer
+		@grd4: l ∉ readingLists // @l isn't already added
+	then
+		@act1: readingLists ≔ readingLists ∪ {l} // adding the reading list to its set
+		@act2: readingListCreator(l) ≔ u // assigning the reading list its creator
+	end
+
+	event RemoveReadingList
+	any
+		l // list to remove
+		u // user removing the list
+	where
+		@grd1: l ∈ readingLists // @l is a reading list
+		@grd2: u ∈ loggedIn // @u is logged in
+		@grd3: permissions(u) = 2 // @u is a lecturer
+	then
+		@act1: readingLists ≔ readingLists ∖ {l} // reading list it removed from its set
+		@act2: readingListCreator ≔ {l} ⩤ readingListCreator // mapping of reading list to its creator is removed
+	end
+
+	event AddToReadingList
+	any
+		l // list to add to
+		u // user adding to the list
+		r // resource to add to the list
+	where
+		@grd1: l ∈ readingLists // @l is a reading list
+		@grd2: u ∈ loggedIn // @u is logged in
+		@grd3: permissions(u) = 2 // @u is a lecturer
+		@grd4: r ∈ resources // @r is an existing resource
+		@grd5: l ↦ r ∉ readingListContents // the resource isn't already a part of the reading list
+		@grd6: readingListCreator(l) = u // mapping the reading list to its creator
+	then
+		@act1: readingListContents ≔ readingListContents ∪ {l ↦ r} // reading list to resource mapping is added
+	end
+
+	event RemoveFromReadingList
+	any
+		l // list to add to
+		u // user adding to the list
+		r // resource to add to the list
+	where
+		@grd1: l ∈ readingLists // @l is a reading list
+		@grd2: u ∈ loggedIn // @u is logged in
+		@grd3: permissions(u) = 2 // @u is a lecturer
+		@grd4: r ∈ resources // @r is an existing resource
+		@grd5: l ↦ r ∈ readingListContents // resource exists in reading list
+	then
+		@act1: readingListContents ≔ readingListContents ⩥ {r} // resource is removed from reading list
+	end
+
+	event BorrowBook
+	any
+		u // user requesting to borrow
+		b // book to borrow
+		t // token
+	where
+		@grd1: u ∈ loggedIn // user is logged in 
+		@grd2: type(b) = BOOK // book is book
+		@grd3: t ∈ TOKEN // generated token 
+		@grd4: t ∉ tokens // token doesn't already exist
+		@grd5: licenseCount(b) ≥ 1 // there is still at least 1 license left
+		@grd6: t ∉ dom(tokenToBook) // token doesn't already exist in the token to book function
+		@grd7: t ∉ ran(userToToken) // token doesn't already exist in the user to token function
+	then
+		@act1: userToToken ≔ userToToken ∪ {u ↦ t} // create a token for user borrowing book
+		@act2: tokenToBook(t) ≔ b // mapping token to book
+		@act3: licenseCount(b) ≔ licenseCount(b) − 1 // decrement the licenseCount by 1
+		@act4: tokens ≔ tokens ∪ {t} // add token to token set
+	end
+
+	event ReturnBook
+	any
+		u // user requesting to return
+		b // book to return 
+		t // token
+	where
+		@grd1: u ∈ loggedIn // user is logged in 
+		@grd2: b ∈ resources // book is in resources
+		@grd3: t ∈ tokens // if token exists in tokens list
+		@grd4: type(b) = BOOK // book is book
+		@grd5: t ∈ ran(userToToken) // if token exists 
+		@grd6: tokenToBook(t) = b // token is assigned to book
+	then
+		@act1: userToToken ≔ userToToken ⩥ {t} // remove user to token mapping
+		@act2: tokenToBook ≔ {t} ⩤ tokenToBook // remove token to book mapping
+		@act3: licenseCount(b) ≔ licenseCount(b) + 1 // increment the licenseCount by 1
+		@act4: tokens ≔ tokens ∖ {t} // remove token from token set
+	end
+	
+	event ReserveBook
+	any
+		u // user requesting to reserve
+		b // book to reserve
+		p // position in the queue
+		t // reservation token
+	where
+		@grd1: u ∈ loggedIn // user is logged in 
+		@grd2: b ∈ resources // book is in resources
+		@grd3: type(b) = BOOK // book is book
+		@grd4: licenseCount(b) = 0 // there are no licenses left
+		@grd5: p ∈ POSITION 
+		@grd6: t ∉ tokens // t is not already in the tokens list
+		@grd7: b ↦ u ∉ reservations // @u hasn't already reserved @b
+	then
+		@act1: reservations ≔ reservations ∪ {b ↦ u}
+		@act2: position(t) ≔ p // set the queue position of @t to @p (calculated above)
+		@act3: tokens ≔ tokens ∪ {t} // add token to tokens set
+		@act4: userToToken ≔ userToToken ∪ {u ↦ t}// create a token for user borrowing book
+		@act5: tokenToBook(t) ≔ b // map token to book
+	end
+	
+	event GetResourceByTitle // search for resource by title
+	any 
+		t // title of resource
+		r // resource to get (return type)
+	where
+		@grd1: t ∈ TITLE
+		@grd2: r = title ∼ [{t}]
+	end
+	
+	event GetBookByISBN // search for book by ISBN
+	any
+		i // isbn of book
+		b // book to get (return type)
+	where
+		@grd1: i ∈ ISBN
+		@grd2: b ∈ RESOURCE
+		@grd3: type(b) = BOOK
+		@grd4: isbn(b) = i
+	end
+end
+

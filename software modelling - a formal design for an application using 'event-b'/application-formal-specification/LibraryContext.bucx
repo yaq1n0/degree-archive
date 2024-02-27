@@ -1,0 +1,30 @@
+context
+ 	LibraryContext
+sets 
+	USER
+	PASSWORD
+	RESOURCE
+	RESOURCETYPE
+	TITLE
+	AUTHOR
+	URL
+	PUBLISHER
+	PUBLISHEDYEAR
+	ISBN
+	READINGLIST
+	TOKEN
+constants
+	LEVEL // access level: 1 - student, 2 - lecturer, 3 - admin, 4 - root admin
+	ROOTUSER // The root user
+	ROOTPASS // The password of the root user
+	BOOK // BOOK resource type
+	ARTICLE // ARTICLE resource type
+	WEBSITE // WEBSITE resource type
+	POSITION 
+axioms
+	@resource_partition: partition(RESOURCETYPE, {BOOK}, {ARTICLE}, {WEBSITE}) // 3 RESOURCE types
+	@def-LEVEL: LEVEL = 1‥4 // 1 - student, 2 - lecturer, 3 - admin, 4 - root admin
+	@def-ROOTUSER: ROOTUSER ∈ USER // rootuser is a user
+	@def-ROOTPASS: ROOTPASS ∈ PASSWORD // rootpass is a password
+	@def-POSITION: POSITION = ℕ // position is a natural number
+end
